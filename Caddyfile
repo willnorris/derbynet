@@ -1,0 +1,10 @@
+:8080 {
+  root website
+  file_server {
+    index index.html index.php
+  }
+  php_fastcgi unix//opt/homebrew/var/run/php-fpm.sock {
+    env DERBYNET_CONFIG_DIR /var/lib/derbynet
+    env DERBYNET_DATA_DIR /var/lib/derbynet
+  }
+}
